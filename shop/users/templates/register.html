@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+{% block content %}
+<!-- <h2>Register page</h2>
+    <div class="box">
+        <form action="" method="POST">
+           
+            {% csrf_token %}
+            {{user.username}}
+            {{user.email}}
+            {{user.password1}}
+            {{user.password2}}
+            <input type="submit" value="Register">
+        </form>
+        
+    </div> -->
+
+
+    <style>
+         .section{
+            height: 90vh;
+           
+        } 
+        .box3 input ::placeholder{
+            color: white;
+        }
+        
+    </style>
+    
+    <div class="section">
+    <div class="box3">
+        <h2>Sign Up</h2>
+       
+
+    <form action="" method="POST">
+           
+        {% csrf_token %}
+        {{user.username.label}}
+        {{user.username}}
+        {{user.email.label}}
+        {{user.email}}
+        {{user.password1.label}}
+        {{user.password1}}
+        {{user.password2.label}}
+        {{user.password2}}
+        <button type="submit" class="btn btn-success  btns">Sign Up</button>
+    </form>
+    <p style="font-size: 2px;color: brown;">{{user.errors}}</p>
+        <p>Already have an Account ? <a href="{% url 'login' %}" >Login</a></p>
+    </div>
+    </div>
+    
+
+
+
+{% endblock %}

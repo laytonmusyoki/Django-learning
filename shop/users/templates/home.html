@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+<style>
+  .container{
+        padding-top: 30px;
+    }
+    /* .background{
+      background: radial-gradient(#fff,#ffd6d6);
+    } */
+</style>
+
+<section class="background">
+  <div class="size">
+    {% for msg in messages %}
+    <div class="alert alert-{{msg.level_tag}} alert-dismissible fade show  name" role="alert" >
+      <strong> {{msg.message}}</strong>
+      <button type="button" class="btn-close name1" data-bs-dismiss="alert" aria-label="close"></button>
+  </div>
+
+    {% endfor %}
+   
+
+    <div class="row2">
+      <div class="single">
+          <h1 >Give Your Workout <br> A New Style!</h1>
+          <p  style="color: #555;">Success isn't always about greatness.It's about consistency.Consistent <br> hardwork gains success.Greatness will come.</p>
+           <a href=""class="btn1">Get started</a>
+      </div>
+      <div class="single">
+        <div class="imagess">
+          <img src="{% static 'images/smart.jpg' %}" >
+        </div>
+          
+      </div>
+    </div>
+  </div>
+  </section>
+  <div class="size2">
+<div class="features">
+  <h3>Featured products</h3>
+</div>
+<div class="products">
+  <div class="row1">
+    <div class="single">
+      <div class="card">
+        <div class="image">
+          <img src="{% static 'images/watch5.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="single">
+      <div class="card">
+        <div class="image">
+          <img src="{% static 'images/watch6.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="single">
+      <div class="card">
+        <div class="image">
+          <img src="{% static 'images/watch.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="features">
+  <h3>Latest products</h3>
+</div>
+<div class="products">
+  <div class="row1">
+    <div class="single">
+      <div class="card">
+        <div class="image">
+          <img src="{% static 'images/shoe.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="single">
+      <div class="card">
+        <div class="image">
+          <img src="{% static 'images/shoe1.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="single">
+      <div class="card">
+        <div class="image">
+          <img src="{% static 'images/shoe2.jpg' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- shoes -->
+
+
+<div class="categories">
+  <div class="features">
+    <h3>Categories</h3>
+  </div>
+  
+  <div class="cate">
+    <h4><span>|</span>Women Shoes</h4>
+  </div>
+</div>
+<div class="products">
+  <div class="row">
+    
+    {% for shoe in shoes %}
+    <div class="col-lg-4 sm-12" style="padding: 20px 0;">
+    <div class="single">
+      <div class="card" style="width: 18rem;">
+        <img src="{{ shoe.image }}" alt="">
+        <div class="card-body">
+          <h5 class="card-title">{{shoe.name}}</h5>
+          <p class="card-text"> {{shoe.price}} </p>
+          <a href="" class="btn btn-primary">Buy Now</a>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    {% endfor %}
+
+
+    
+
+    
+ 
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
